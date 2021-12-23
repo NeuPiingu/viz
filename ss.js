@@ -82,7 +82,8 @@ var analyser2 = audioContext.createAnalyser();
 
 //routing the audio
 track.connect(gainNode).connect(audioContext.destination);
-track.connect(analyser).connect(analyser2)
+track.connect(gainNode).connect(analyser);
+track.connect(gainNode).connect(analyser2);
 analyser.fftSize = 2048;
 var bufferLength = analyser.frequencyBinCount;
 var dataArray = new Uint8Array(bufferLength);
@@ -113,10 +114,6 @@ canvas1.addEventListener('mousemove', function(event){
     
 });
 
-/* var hue = 0;
-function colorUpdate() {
-    hue += 5;
-} */
 
 function draw(){
     var drawVisual = requestAnimationFrame(draw);
@@ -147,7 +144,7 @@ function draw(){
         lgt = 50;
     } else {
         lgt = 0;
-    };
+    }
     
     //function to place oscilloscope on points around mouse
     for(let i = 0; i < tot; i++){
@@ -176,8 +173,8 @@ function draw(){
         ctx.fillRect((x2+200), mouse.y-barHeight/2, barWidth, barHeight);
 
         x2 += barWidth +3;
-    };  
-};
+    }  
+}
 draw();
 
 const mellowMusic = document.getElementById('mellowMusic');
@@ -189,7 +186,7 @@ mellowMusic.addEventListener('click', function(){
         this.dataset.chosen = 'true';
         audioElement.play();
         upbeatMusic.dataset.chosen="false";
-        playButton.dataset.playing = "true"
+        playButton.dataset.playing = "true";
         this.disabled = true;
         upbeatMusic.disabled = false;
     }
