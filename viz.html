@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="viz.css">
+    <script src="./ss.js" defer></script>
+    <title>Screensaver woop</title>
+</head>
+<body>
+    <div id="canCont">
+        <canvas id="canvas1">
+            
+        </canvas>
+
+        <audio src="./hehe.mp3"></audio>
+        <div id="controls">
+        <button id="playP" class="button-28" data-playing="false" role="switch" aria-checked="false">
+            <span>Play/Pause</span>
+        </button>
+        <input type="range" id="volume" min="0" max="2" value="1" step="0.01">
+        <label id="volumeHelp" for="volume">Volume control, use scroll to increase or decrease gain</label>
+        <div id="songSel">
+            <button id="mellowMusic" class="button-28 songChoice" data-chosen="false" role="switch" aria-checked="false">
+                <span>Mellow</span>
+            </button>
+            <button id="upbeatMusic" class="button-28 songChoice" data-chosen="false" role="switch" aria-checked="false">
+                <span>Upbeat</span>
+            </button>
+            </div>    
+        </div>
+    </div>
+</body>
+</html>

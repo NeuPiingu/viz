@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#canCont {
+    width: 100%;
+    height: 100%;
+}
+
+#canvas1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: black;
+}
+
+#controls {
+    position: relative;
+    display: grid;
+    width: 25%;
+    margin-inline: auto;
+    grid-template-columns: 3fr 2fr 2fr;
+    grid-template-rows: repeat(3 1fr);
+}
+
+
+#playP {
+    height: 3em;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    grid-row: 1;
+    column-span: 3fr;
+}  
+
+#playP:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#songSel {
+    display: grid;
+    margin-left: 5%;
+    grid-row: 1;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%
+}
+#mellowMusic {
+    height: 3em;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+#mellowMusic:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#upbeatMusic {
+    height: 3em;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+#upbeatMusic:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#mellowMusic:disabled {
+    color: gray;
+    border-color: gray;
+    cursor: default;
+}
+
+#mellowMusic:disabled:hover {
+    color: gray;
+    border-color: gray;
+    cursor: default;
+    background: transparent;
+}
+
+#upbeatMusic:disabled {
+    color: gray;
+    border-color: gray;
+    cursor: default;
+}
+#upbeatMusic:disabled:hover {
+    color: gray;
+    border-color: gray;
+    cursor: default;
+    background: transparent;
+}
+
+#volume {
+    column-span: 7fr;
+    height: 2em;
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: #acacac; /* Otherwise white in Chrome */
+    grid-row: 2;
+    margin-top: 2%;
+}
+
+
+
+
+
+
+#volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+
+    border: 1px solid #FFFFFF;
+    height: 3em;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #ffffff, 0px 0px 0px #0d0d0d;
+}
+
+#volume::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #ffffff;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+#volume::-ms-thumb {
+   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+   border: 1px solid #ffffff;
+   height: 36px;
+   width: 16px;
+   border-radius: 3px;
+   background: #acacac;
+   cursor: pointer;
+}
+
+#volume:focus {
+    outline: none;
+}
+
+#volume::-ms-track{
+    width: 100%;
+    cursor: pointer;
+
+    background: white;
+    border-color: white;
+    color: white;
+}
+
+#volumeHelp {
+    position:relative;
+    column-span: auto;
+    grid-row: 3;
+    color: white;
+    visibility: hidden;
+}
+
+#volume:hover + #volumeHelp {
+    visibility: visible;
+
+}
+
